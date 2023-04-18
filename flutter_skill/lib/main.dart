@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_skill/material_wedgets.dart';
+import 'package:flutter_skill/home_page.dart';
 
-
-import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,14 @@ class MyApp extends StatelessWidget {
  
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomepage(),
+      home: MaterialWedgets(),
+      // routes: {
+      //   '/': (context) => const MyHomepage(),
+      //   '/material_wedgets': (context) => const MaterialWedgets(),
+      // }
+
+     
+
     );
   }
 }
