@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_skill/bottom_nav_bar.dart';
 import 'package:flutter_skill/material_wedgets.dart';
 import 'package:flutter_skill/home_page.dart';
 
@@ -19,11 +20,12 @@ class MyApp extends StatelessWidget {
  
         primarySwatch: Colors.blue,
       ),
-      home: MaterialWedgets(),
-      // routes: {
-      //   '/': (context) => const MyHomepage(),
-      //   '/material_wedgets': (context) => const MaterialWedgets(),
-      // }
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const MyHomepage(),
+          '/material_wedgets': (context) => const MaterialWedgets(),
+          // '/ bottom_nav_bar': (context) => const BottomNavBar(),
+        }
 
      
 

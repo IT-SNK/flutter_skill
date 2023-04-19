@@ -16,7 +16,14 @@ class _MyHomepageState extends State<MyHomepage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter Skillbox'),
-        
+        actions: [
+          IconButton(
+              onPressed: () {
+         
+                Navigator.of(context).pushNamed('/material_wedgets');
+              },
+              icon: const Icon(Icons.arrow_forward_ios)),
+        ],
       ),
       body: SafeArea(
         child: Column(
