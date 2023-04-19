@@ -11,6 +11,8 @@ class MyHomepage extends StatefulWidget {
 }
 
 class _MyHomepageState extends State<MyHomepage> {
+  final carouselController = CarouselController();
+  int correnIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,41 +28,43 @@ class _MyHomepageState extends State<MyHomepage> {
         ],
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              'Nauryz Saktagan',
-              style: TextStyle(fontSize: 40, fontFamily: 'Comfortaa'),
-            ),
-            SvgPicture.asset(
-              'assets/svg/drag.svg',
-              width: 200,
-              height: 200,
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            CarouselSlider(
-              items: listImages
-                  .map(
-                    (e) => Image.asset(
-                      e['images_path'],
-                      fit: BoxFit.cover,
-                      // width: 500,
-                      // height: 200,
-                    ),
-                  )
-                  .toList(),
-              carouselController: carouselController,
-              options: CarouselOptions(),
-            ),
-            SizedBox(
-              height: 15,
-            ),
-            Image.network(
-                'https://avatars.mds.yandex.net/i?id=5d510e0fd963f84aad3735b905574e3a_sr-7015461-images-thumbs&n=13'),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const Text(
+                'Nauryz Saktagan',
+                style: TextStyle(fontSize: 40, fontFamily: 'Comfortaa'),
+              ),
+              SvgPicture.asset(
+                'assets/svg/drag.svg',
+                width: 200,
+                height: 200,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              CarouselSlider(
+                items: listImages
+                    .map(
+                      (e) => Image.asset(
+                        e['images_path'],
+                        fit: BoxFit.cover,
+                        // width: 500,
+                        // height: 200,
+                      ),
+                    )
+                    .toList(),
+                carouselController: carouselController,
+                options: CarouselOptions(),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              Image.network(
+                  'https://avatars.mds.yandex.net/i?id=5d510e0fd963f84aad3735b905574e3a_sr-7015461-images-thumbs&n=13'),
+            ],
+          ),
         ),
       ),
     );
