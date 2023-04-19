@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    
     return MaterialApp(
       title: 'Skillbox Flutter',
       theme: ThemeData(
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         routes: {
           '/': (context) => const MyHomepage(),
           '/material_wedgets': (context) => const MaterialWedgets(),
-          // '/ bottom_nav_bar': (context) => const BottomNavBar(),
+          '/ bottom_nav_bar': (context) => const BottomNavBar(),
         }
 
      
